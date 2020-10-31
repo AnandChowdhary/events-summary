@@ -88,7 +88,7 @@ export const run = async () => {
     path: "README.md",
   });
   const base64Content = Buffer.from(readmeContents).toString("base64");
-  if (currentContents.data.content !== base64Content)
+  if (Buffer.from(currentContents.data.content, "base64").toString("utf8").trim() !== readmeContents.trim())
     await octokit.repos.createOrUpdateFileContents({
       owner: context.repo.owner,
       repo: context.repo.repo,
