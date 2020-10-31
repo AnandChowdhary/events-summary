@@ -52,6 +52,10 @@ jobs:
           token: "${{ secrets.GITHUB_TOKEN }}"
 ```
 
+Your `README.md` file should then contains a summary of the events in the `events` directory:
+
+![Screenshot of README.md](https://user-images.githubusercontent.com/2841780/97774563-e5ca4600-1b7e-11eb-926e-2bf81e4128bc.png)
+
 ## 📄 License
 
 - Code: [MIT](./LICENSE) © [Anand Chowdhary](https://anandchowdhary.com)
