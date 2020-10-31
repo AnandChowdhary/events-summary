@@ -4,6 +4,10 @@ author: "Anand Chowdhary <https://github.com/AnandChowdhary>"
 runs:
   using: "node12"
   main: "dist/index.js"
+inputs:
+  token:
+    required: true
+    description: "GitHub token"
 branding:
   icon: "calendar"
   color: "green"
