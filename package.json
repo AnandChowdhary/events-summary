@@ -1,6 +1,6 @@
 {
   "name": "events-summary",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "Starter for GitHub Actions with TypeScript and automated releases",
   "main": "dist/index.js",
   "scripts": {
