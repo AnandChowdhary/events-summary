@@ -4110,7 +4110,7 @@ const parseEventFile = async (year, file) => {
     };
 };
 const token = core_1.getInput("token") || process.env.GH_PAT || process.env.GITHUB_TOKEN;
-exports.run = async () => {
+const run = async () => {
     if (!token)
         throw new Error("GitHub token not found");
     const octokit = github_1.getOctokit(token);
@@ -4176,6 +4176,7 @@ exports.run = async () => {
         });
     core_1.setOutput("Events updated", totalEvents);
 };
+exports.run = run;
 exports.run()
     .then(() => { })
     .catch((error) => {
