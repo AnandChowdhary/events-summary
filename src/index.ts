@@ -36,6 +36,7 @@ export const run = async () => {
   const octokit = getOctokit(token);
 
   const allEvents: { [index: string]: Array<Event> } = {};
+  const eventsList: Array<Event> = [];
   const allCountries = new Set<string>();
   let totalEvents = 0;
   let pastEvents = "";
@@ -49,6 +50,7 @@ export const run = async () => {
       const eventFile = await parseEventFile(year, event);
       allEvents[year].push(eventFile);
       allCountries.add(eventFile.emoji);
+      eventsList.push(eventFile);
     }
   }
   Object.keys(allEvents)
@@ -88,7 +90,10 @@ export const run = async () => {
     path: "README.md",
   });
   const base64Content = Buffer.from(readmeContents).toString("base64");
-  if (Buffer.from(currentContents.data.content, "base64").toString("utf8").trim() !== readmeContents.trim())
+  if (
+    Buffer.from(currentContents.data.content, "base64").toString("utf8").trim() !==
+    readmeContents.trim()
+  )
     await octokit.repos.createOrUpdateFileContents({
       owner: context.repo.owner,
       repo: context.repo.repo,
@@ -96,6 +101,24 @@ export const run = async () => {
       path: "README.md",
       message: ":pencil: Update event summary [skip ci]",
       content: base64Content,
+    });
+  const currentContentsApi = await octokit.repos.getContent({
+    owner: context.repo.owner,
+    repo: context.repo.repo,
+    path: "api.json",
+  });
+  const apiContents = Buffer.from(JSON.stringify(eventsList, null, 2)).toString("base64");
+  if (
+    Buffer.from(currentContentsApi.data.content, "base64").toString("utf8").trim() !==
+    apiContents.trim()
+  )
+    await octokit.repos.createOrUpdateFileContents({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      sha: currentContentsApi.data.sha,
+      path: "README.md",
+      message: ":card_file_box: Update events API [skip ci]",
+      content: apiContents,
     });
   setOutput("Events updated", totalEvents);
 };
