@@ -1,3 +1,11 @@
+## v1.1.1 (2021-01-11)
+
+[📝 Release notes](https://github.com/AnandChowdhary/events-summary/releases/tag/v1.1.1) · [💻 Compare](https://github.com/AnandChowdhary/events-summary/compare/v1.1.0...v1.1.1) · [🔖 Tag](https://github.com/AnandChowdhary/events-summary/tree/v1.1.1) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/events-summary/archive/v1.1.1.zip) · [tar.gz](https://github.com/AnandChowdhary/events-summary/archive/v1.1.1.tar.gz))
+
+### 🐛 Bug fixes
+
+- [`0f684ab`](https://github.com/AnandChowdhary/events-summary/commit/0f684ab)  Fix updating api.json
+
 ## v1.1.0 (2021-01-11)
 
 [📝 Release notes](https://github.com/AnandChowdhary/events-summary/releases/tag/v1.1.0) · [💻 Compare](https://github.com/AnandChowdhary/events-summary/compare/v1.0.2...v1.1.0) · [🔖 Tag](https://github.com/AnandChowdhary/events-summary/tree/v1.1.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/events-summary/archive/v1.1.0.zip) · [tar.gz](https://github.com/AnandChowdhary/events-summary/archive/v1.1.0.tar.gz))
