@@ -4189,7 +4189,7 @@ const run = async () => {
             owner: github_1.context.repo.owner,
             repo: github_1.context.repo.repo,
             sha: currentContentsApi.data.sha,
-            path: "README.md",
+            path: "api.json",
             message: ":card_file_box: Update events API [skip ci]",
             content: apiContents,
         });
