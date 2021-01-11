@@ -116,7 +116,7 @@ export const run = async () => {
       owner: context.repo.owner,
       repo: context.repo.repo,
       sha: currentContentsApi.data.sha,
-      path: "README.md",
+      path: "api.json",
       message: ":card_file_box: Update events API [skip ci]",
       content: apiContents,
     });
