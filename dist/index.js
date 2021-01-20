@@ -3186,12 +3186,11 @@ module.exports = {
 /***/ 356:
 /***/ (function(module) {
 
-function stringify (obj, options = {}) {
-  const EOL = options.EOL || '\n'
+function stringify (obj, { EOL = '\n', finalEOL = true, replacer = null, spaces } = {}) {
+  const EOF = finalEOL ? EOL : ''
+  const str = JSON.stringify(obj, replacer, spaces)
 
-  const str = JSON.stringify(obj, options ? options.replacer : null, options.spaces)
-
-  return str.replace(/\n/g, EOL) + EOL
+  return str.replace(/\n/g, EOL) + EOF
 }
 
 function stripBom (content) {
@@ -9750,9 +9749,10 @@ exports.fromCallback = function (fn) {
     if (typeof args[args.length - 1] === 'function') fn.apply(this, args)
     else {
       return new Promise((resolve, reject) => {
-        fn.apply(
+        fn.call(
           this,
-          args.concat([(err, res) => err ? reject(err) : resolve(res)])
+          ...args,
+          (err, res) => (err != null) ? reject(err) : resolve(res)
         )
       })
     }
@@ -10543,6 +10543,7 @@ const api = [
   'readlink',
   'realpath',
   'rename',
+  'rm',
   'rmdir',
   'stat',
   'symlink',
@@ -10553,6 +10554,7 @@ const api = [
 ].filter(key => {
   // Some commands are not available on some systems. Ex:
   // fs.opendir was added in Node.js v12.12.0
+  // fs.rm was added in Node.js v14.14.0
   // fs.lchown is not available on at least some Linux
   return typeof fs[key] === 'function'
 })
