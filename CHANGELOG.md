@@ -1,3 +1,14 @@
+## v1.1.2 (2021-01-20)
+
+[📝 Release notes](https://github.com/AnandChowdhary/events-summary/releases/tag/v1.1.2) · [💻 Compare](https://github.com/AnandChowdhary/events-summary/compare/v1.1.1...v1.1.2) · [🔖 Tag](https://github.com/AnandChowdhary/events-summary/tree/v1.1.2) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/events-summary/archive/v1.1.2.zip) · [tar.gz](https://github.com/AnandChowdhary/events-summary/archive/v1.1.2.tar.gz))
+
+### ⬆️ Dependency updates
+
+- [`d7b3567`](https://github.com/AnandChowdhary/events-summary/commit/d7b3567)  Bump semantic-release from 17.3.1 to 17.3.2
+- [`3625218`](https://github.com/AnandChowdhary/events-summary/commit/3625218)  Bump semantic-release from 17.3.2 to 17.3.3
+- [`5e07f73`](https://github.com/AnandChowdhary/events-summary/commit/5e07f73)  Bump fs-extra from 9.0.1 to 9.1.0
+- [`e776754`](https://github.com/AnandChowdhary/events-summary/commit/e776754)  Bump semantic-release from 17.3.3 to 17.3.4
+
 ## v1.1.1 (2021-01-11)
 
 [📝 Release notes](https://github.com/AnandChowdhary/events-summary/releases/tag/v1.1.1) · [💻 Compare](https://github.com/AnandChowdhary/events-summary/compare/v1.1.0...v1.1.1) · [🔖 Tag](https://github.com/AnandChowdhary/events-summary/tree/v1.1.1) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/events-summary/archive/v1.1.1.zip) · [tar.gz](https://github.com/AnandChowdhary/events-summary/archive/v1.1.1.tar.gz))
