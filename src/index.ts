@@ -1,6 +1,6 @@
 import { getInput, setFailed, setOutput } from "@actions/core";
-import { context, getOctokit } from "@actions/github";
-import { readdir, readFile } from "fs-extra";
+import { execSync } from "child_process";
+import { readdir, readFile, writeFile } from "fs-extra";
 import { join } from "path";
 const emojiFlags = require("emoji-flags");
 
@@ -29,12 +29,7 @@ const parseEventFile = async (year: string, file: string): Promise<Event> => {
   };
 };
 
-const token = getInput("token") || process.env.GH_PAT || process.env.GITHUB_TOKEN;
-
 export const run = async () => {
-  if (!token) throw new Error("GitHub token not found");
-  const octokit = getOctokit(token);
-
   const allEvents: { [index: string]: Array<Event> } = {};
   const eventsList: Array<Event> = [];
   const allCountries = new Set<string>();
@@ -84,43 +79,20 @@ export const run = async () => {
   readmeContents = `${
     readmeContents.split("<!--events-->")[0]
   }<!--events-->\n\n${content.trim()}\n<!--/events-->${readmeContents.split("<!--/events-->")[1]}`;
-  const currentContents = await octokit.repos.getContent({
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    path: "README.md",
-  });
-  const base64Content = Buffer.from(readmeContents).toString("base64");
-  if (
-    Buffer.from(currentContents.data.content, "base64").toString("utf8").trim() !==
-    readmeContents.trim()
-  )
-    await octokit.repos.createOrUpdateFileContents({
-      owner: context.repo.owner,
-      repo: context.repo.repo,
-      sha: currentContents.data.sha,
-      path: "README.md",
-      message: ":pencil: Update event summary [skip ci]",
-      content: base64Content,
-    });
-  const currentContentsApi = await octokit.repos.getContent({
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    path: "api.json",
-  });
-  const apiContents = Buffer.from(JSON.stringify(eventsList, null, 2)).toString("base64");
-  if (
-    Buffer.from(currentContentsApi.data.content, "base64").toString("utf8").trim() !==
-    apiContents.trim()
-  )
-    await octokit.repos.createOrUpdateFileContents({
-      owner: context.repo.owner,
-      repo: context.repo.repo,
-      sha: currentContentsApi.data.sha,
-      path: "api.json",
-      message: ":card_file_box: Update events API [skip ci]",
-      content: apiContents,
-    });
+
+  await writeFile(join(".", "README.md"), readmeContents);
+  await writeFile(join(".", "api.json"), JSON.stringify(eventsList, null, 2));
   setOutput("Events updated", totalEvents);
+
+  execSync(
+    `git config --global user.email "${
+      getInput("bot-email") || "41898282+github-actions[bot]@users.noreply.github.com"
+    }"`
+  );
+  execSync(`git config --global user.name "${getInput("bot-name") || "github-actions[bot]"}"`);
+  execSync("git add .");
+  execSync('git commit -m ":card_file_box: Update events API [skip ci]"');
+  execSync("git push");
 };
 
 run()
