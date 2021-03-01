@@ -5,9 +5,12 @@ runs:
   using: "node12"
   main: "dist/index.js"
 inputs:
-  token:
-    required: true
-    description: "GitHub token"
+  bot-name:
+    required: false
+    description: "Name for commit"
+  bot-email:
+    required: false
+    description: "Email for commit"
 branding:
   icon: "calendar"
   color: "green"
