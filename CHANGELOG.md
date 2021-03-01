@@ -1,3 +1,33 @@
+## v1.1.3 (2021-03-01)
+
+[📝 Release notes](https://github.com/AnandChowdhary/events-summary/releases/tag/v1.1.3) · [💻 Compare](https://github.com/AnandChowdhary/events-summary/compare/v1.1.2...v1.1.3) · [🔖 Tag](https://github.com/AnandChowdhary/events-summary/tree/v1.1.3) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/events-summary/archive/v1.1.3.zip) · [tar.gz](https://github.com/AnandChowdhary/events-summary/archive/v1.1.3.tar.gz))
+
+### ♻️ Updates
+
+- [`bddc1fa`](https://github.com/AnandChowdhary/events-summary/commit/bddc1fa)  Use git instead of GitHub API
+
+### ⬆️ Dependency updates
+
+- [`0b0baca`](https://github.com/AnandChowdhary/events-summary/commit/0b0baca)  Bump semantic-release from 17.3.4 to 17.3.6
+- [`f0f4453`](https://github.com/AnandChowdhary/events-summary/commit/f0f4453)  Bump semantic-release from 17.3.6 to 17.3.7
+- [`4045fd1`](https://github.com/AnandChowdhary/events-summary/commit/4045fd1)  Bump ts-jest from 26.4.4 to 26.5.0
+- [`5b9e7c5`](https://github.com/AnandChowdhary/events-summary/commit/5b9e7c5)  Bump actions/cache from v2 to v2.1.4
+- [`4360b43`](https://github.com/AnandChowdhary/events-summary/commit/4360b43)  Bump semantic-release from 17.3.7 to 17.3.8
+- [`d83fb12`](https://github.com/AnandChowdhary/events-summary/commit/d83fb12)  Bump typescript from 4.1.3 to 4.1.4
+- [`149b5a7`](https://github.com/AnandChowdhary/events-summary/commit/149b5a7)  Bump ts-jest from 26.5.0 to 26.5.1
+- [`57399bd`](https://github.com/AnandChowdhary/events-summary/commit/57399bd)  Bump typescript from 4.1.4 to 4.1.5
+- [`465e0ca`](https://github.com/AnandChowdhary/events-summary/commit/465e0ca)  Bump @types/fs-extra from 9.0.6 to 9.0.7
+- [`0d56a52`](https://github.com/AnandChowdhary/events-summary/commit/0d56a52)  Bump vsoch/pull-request-action from 1.0.13 to 1.0.14
+- [`32abac3`](https://github.com/AnandChowdhary/events-summary/commit/32abac3)  Bump pascalgn/automerge-action from v0.13.0 to v0.13.1
+- [`9813fe0`](https://github.com/AnandChowdhary/events-summary/commit/9813fe0)  Bump semantic-release from 17.3.8 to 17.3.9
+- [`fe28315`](https://github.com/AnandChowdhary/events-summary/commit/fe28315)  Bump vsoch/pull-request-action from 1.0.14 to 1.0.15
+- [`b4f524a`](https://github.com/AnandChowdhary/events-summary/commit/b4f524a)  Bump stefanzweifel/git-auto-commit-action
+- [`6b11ac8`](https://github.com/AnandChowdhary/events-summary/commit/6b11ac8)  Bump actions/setup-node from v2.1.4 to v2.1.5
+- [`d7df22c`](https://github.com/AnandChowdhary/events-summary/commit/d7df22c)  Bump stefanzweifel/git-auto-commit-action
+- [`85baa77`](https://github.com/AnandChowdhary/events-summary/commit/85baa77)  Bump typescript from 4.1.5 to 4.2.2
+- [`aff36c0`](https://github.com/AnandChowdhary/events-summary/commit/aff36c0)  Bump ts-jest from 26.5.1 to 26.5.2
+- [`5f24bac`](https://github.com/AnandChowdhary/events-summary/commit/5f24bac)  Bump semantic-release from 17.3.9 to 17.4.0
+
 ## v1.1.2 (2021-01-20)
 
 [📝 Release notes](https://github.com/AnandChowdhary/events-summary/releases/tag/v1.1.2) · [💻 Compare](https://github.com/AnandChowdhary/events-summary/compare/v1.1.1...v1.1.2) · [🔖 Tag](https://github.com/AnandChowdhary/events-summary/tree/v1.1.2) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/events-summary/archive/v1.1.2.zip) · [tar.gz](https://github.com/AnandChowdhary/events-summary/archive/v1.1.2.tar.gz))
