@@ -83,16 +83,6 @@ export const run = async () => {
   await writeFile(join(".", "README.md"), readmeContents);
   await writeFile(join(".", "api.json"), JSON.stringify(eventsList, null, 2));
   setOutput("Events updated", totalEvents);
-
-  execSync(
-    `git config --global user.email "${
-      getInput("bot-email") || "41898282+github-actions[bot]@users.noreply.github.com"
-    }"`
-  );
-  execSync(`git config --global user.name "${getInput("bot-name") || "github-actions[bot]"}"`);
-  execSync("git add .");
-  execSync('git commit -m ":card_file_box: Update events API [skip ci]"');
-  execSync("git push");
 };
 
 run()
