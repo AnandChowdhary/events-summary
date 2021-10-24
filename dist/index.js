@@ -936,13 +936,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ 129:
-/***/ (function(module) {
-
-module.exports = require("child_process");
-
-/***/ }),
-
 /***/ 149:
 /***/ (function(module, __unusedexports, __webpack_require__) {
 
@@ -2812,7 +2805,6 @@ module.exports = require("stream");
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.run = void 0;
 const core_1 = __webpack_require__(470);
-const child_process_1 = __webpack_require__(129);
 const fs_extra_1 = __webpack_require__(226);
 const path_1 = __webpack_require__(622);
 const emojiFlags = __webpack_require__(852);
@@ -2879,11 +2871,6 @@ const run = async () => {
     await fs_extra_1.writeFile(path_1.join(".", "README.md"), readmeContents);
     await fs_extra_1.writeFile(path_1.join(".", "api.json"), JSON.stringify(eventsList, null, 2));
     core_1.setOutput("Events updated", totalEvents);
-    child_process_1.execSync(`git config --global user.email "${core_1.getInput("bot-email") || "41898282+github-actions[bot]@users.noreply.github.com"}"`);
-    child_process_1.execSync(`git config --global user.name "${core_1.getInput("bot-name") || "github-actions[bot]"}"`);
-    child_process_1.execSync("git add .");
-    child_process_1.execSync('git commit -m ":card_file_box: Update events API [skip ci]"');
-    child_process_1.execSync("git push");
 };
 exports.run = run;
 exports.run()
