@@ -46,9 +46,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Update event summary
-        uses: AnandChowdhary/events-summary@master
+        uses: AnandChowdhary/events-summary@main
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Publish package
+        uses: stefanzweifel/git-auto-commit-action@v4.9.2
+        with:
+          commit_message: ":pencil: Generate README summary [skip ci]"
 ```
 
 Your `README.md` file should then contains a summary of the events in the `events` directory:
