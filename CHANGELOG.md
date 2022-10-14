@@ -1,3 +1,19 @@
+## v1.2.0 (2022-10-14)
+
+[📝 Release notes](https://github.com/AnandChowdhary/events-summary/releases/tag/v1.2.0) · [💻 Compare](https://github.com/AnandChowdhary/events-summary/compare/v1.1.3...v1.2.0) · [🔖 Tag](https://github.com/AnandChowdhary/events-summary/tree/v1.2.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/events-summary/archive/v1.2.0.zip) · [tar.gz](https://github.com/AnandChowdhary/events-summary/archive/v1.2.0.tar.gz))
+
+### ✨ New features
+
+- [`7c72ef7`](https://github.com/AnandChowdhary/events-summary/commit/7c72ef7)  Add support for coordinates in API
+
+### ⬆️ Dependency updates
+
+- [`6872e59`](https://github.com/AnandChowdhary/events-summary/commit/6872e59)  Bump @types/fs-extra from 9.0.7 to 9.0.8
+- [`4f4a480`](https://github.com/AnandChowdhary/events-summary/commit/4f4a480)  Bump ts-jest from 26.5.2 to 26.5.3
+- [`9e78410`](https://github.com/AnandChowdhary/events-summary/commit/9e78410)  Bump semantic-release from 17.4.0 to 17.4.1
+- [`0683c17`](https://github.com/AnandChowdhary/events-summary/commit/0683c17)  Bump stefanzweifel/git-auto-commit-action
+- [`739e7af`](https://github.com/AnandChowdhary/events-summary/commit/739e7af)  Bump typescript from 4.2.2 to 4.2.3
+
 ## v1.1.3 (2021-03-01)
 
 [📝 Release notes](https://github.com/AnandChowdhary/events-summary/releases/tag/v1.1.3) · [💻 Compare](https://github.com/AnandChowdhary/events-summary/compare/v1.1.2...v1.1.3) · [🔖 Tag](https://github.com/AnandChowdhary/events-summary/tree/v1.1.3) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/events-summary/archive/v1.1.3.zip) · [tar.gz](https://github.com/AnandChowdhary/events-summary/archive/v1.1.3.tar.gz))
