@@ -1,1 +1,1 @@
-module.exports = require("@koj/config").releaseMaster;
+module.exports = require("@koj/config").release("main");
