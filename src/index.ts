@@ -11,6 +11,7 @@ interface Event {
   venue: string;
   city: string;
   emoji: string;
+  coordinates?: [number, number];
 }
 
 const parseEventFile = async (year: string, file: string): Promise<Event> => {
@@ -26,6 +27,7 @@ const parseEventFile = async (year: string, file: string): Promise<Event> => {
     ).emoji,
     venue: (lines.find((line) => line.startsWith("venue: ")) || "").split("venue: ")[1],
     city: (lines.find((line) => line.startsWith("city: ")) || "").split("city: ")[1],
+    coordinates: (((lines.find((line) => line.startsWith("coordinates: ")) || "").split("coordinates: ")[1] || "").split(",") || []).map(val => Number(val.trim())),
   };
 };
 
