@@ -2818,6 +2818,7 @@ const parseEventFile = async (year, file) => {
         emoji: emojiFlags.countryCode((lines.find((line) => line.startsWith("country: ")) || "").split("country: ")[1]).emoji,
         venue: (lines.find((line) => line.startsWith("venue: ")) || "").split("venue: ")[1],
         city: (lines.find((line) => line.startsWith("city: ")) || "").split("city: ")[1],
+        coordinates: (((lines.find((line) => line.startsWith("coordinates: ")) || "").split("coordinates: ")[1] || "").split(",") || []).map(val => Number(val.trim())),
     };
 };
 const run = async () => {
@@ -2837,6 +2838,7 @@ const run = async () => {
             allEvents[year].push(eventFile);
             allCountries.add(eventFile.emoji);
             eventsList.push(eventFile);
+            console.log(eventFile);
         }
     }
     Object.keys(allEvents)
