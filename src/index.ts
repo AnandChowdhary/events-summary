@@ -27,7 +27,7 @@ const parseEventFile = async (year: string, file: string): Promise<Event> => {
     ).emoji,
     venue: (lines.find((line) => line.startsWith("venue: ")) || "").split("venue: ")[1],
     city: (lines.find((line) => line.startsWith("city: ")) || "").split("city: ")[1],
-    coordinates: (lines.find((line) => line.startsWith("coordinates: ")) || "").split("coordinates: ")[1],
+    coordinates: JSON.parse((lines.find((line) => line.startsWith("coordinates: ")) || "").split("coordinates: ")[1] || "[]"),
   };
 };
 
