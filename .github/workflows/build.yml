@@ -2,7 +2,7 @@ name: Build CI
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   release:
     name: Build and publish
