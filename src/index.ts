@@ -48,6 +48,7 @@ export const run = async () => {
       allEvents[year].push(eventFile);
       allCountries.add(eventFile.emoji);
       eventsList.push(eventFile);
+      console.log(eventFile);
     }
   }
   Object.keys(allEvents)
