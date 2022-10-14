@@ -11,7 +11,7 @@ interface Event {
   venue: string;
   city: string;
   emoji: string;
-  coordinates?: [number, number];
+  coordinates?: number[];
 }
 
 const parseEventFile = async (year: string, file: string): Promise<Event> => {
