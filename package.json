@@ -44,20 +44,5 @@
     "@koj/config": "^1.2.11",
     "emoji-flags": "^1.3.0",
     "fs-extra": "^10.1.0"
-  },
-  "jest": {
-    "roots": [
-      "<rootDir>/src/"
-    ],
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx"
-    ],
-    "automock": false
   }
 }

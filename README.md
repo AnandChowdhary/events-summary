@@ -6,7 +6,7 @@ This GitHub Action generates a `README.md` summary for your events repository. Y
 [![Release CI](https://github.com/AnandChowdhary/events-summary/workflows/Release%20CI/badge.svg)](https://github.com/AnandChowdhary/events-summary/actions?query=workflow%3A%22Release+CI%22)
 [![Node CI](https://github.com/AnandChowdhary/events-summary/workflows/Node%20CI/badge.svg)](https://github.com/AnandChowdhary/events-summary/actions?query=workflow%3A%22Node+CI%22)
 
-## 👩‍💻 Getting started 
+## 👩‍💻 Getting started
 
 First, setup your repository with this file structure:
 
@@ -35,7 +35,7 @@ Finally, create the GitHub Actions workflow in `.github/workflows/readme.yml`:
 name: Readme CI
 on:
   push:
-    branches: [master]
+    branches: [main]
   schedule:
     - cron: "0 0 * * *"
 jobs:
