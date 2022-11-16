@@ -11,6 +11,7 @@ interface Event {
   venue: string;
   city: string;
   emoji: string;
+  country: string;
   coordinates?: string;
 }
 
@@ -25,9 +26,13 @@ const parseEventFile = async (year: string, file: string): Promise<Event> => {
     emoji: emojiFlags.countryCode(
       (lines.find((line) => line.startsWith("country: ")) || "").split("country: ")[1]
     ).emoji,
+    country: (lines.find((line) => line.startsWith("country: ")) || "").split("country: ")[1],
     venue: (lines.find((line) => line.startsWith("venue: ")) || "").split("venue: ")[1],
     city: (lines.find((line) => line.startsWith("city: ")) || "").split("city: ")[1],
-    coordinates: JSON.parse((lines.find((line) => line.startsWith("coordinates: ")) || "").split("coordinates: ")[1] || "[]"),
+    coordinates: JSON.parse(
+      (lines.find((line) => line.startsWith("coordinates: ")) || "").split("coordinates: ")[1] ||
+        "[]"
+    ),
   };
 };
 
